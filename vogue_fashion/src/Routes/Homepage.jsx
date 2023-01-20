@@ -17,9 +17,9 @@ export default function Homepage() {
 
             {/* Offer Advertise */}
 
-            <Carousel showArrows={false} infiniteLoop autoPlay interval="2000">
+            <Carousel showArrows={false} infiniteLoop autoPlay interval="2000" showThumbs={false}>
                 {imageUrl.map((e) => 
-                    <Box pos="relative" display="flex" justifyContent="center" mb="30px"> 
+                    <Box key={Date.now()} pos="relative" display="flex" justifyContent="center" mb="30px"> 
                         <Image src={e.url} alt="Advertise" w="full" />
                         <Flex gap="20px" pos="absolute" bottom="20%">
                             <Button bg="#ff0000" color="white" _hover={{border: "1px solid #ff0000", bg: "transparent", color: "#ff0000"}} px="30px">DISCOVER MAN</Button>

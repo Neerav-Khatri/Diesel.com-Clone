@@ -9,7 +9,6 @@ import { useState } from "react";
 
 export default function Navbar() {
     const [search, setSearch] = useState(false);
-    console.log(search);
 
     return (
         <div>

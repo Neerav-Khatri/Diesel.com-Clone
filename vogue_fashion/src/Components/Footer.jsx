@@ -12,7 +12,7 @@ export default function Footer() {
                 <Box bg="#000000" w="50%" color="white" display="flex" justifyContent="center" alignItems="center">
                     <Container mt="10px" w="65%">
                         <Heading size="lg" >Sign up to never miss an update.</Heading>
-                        <Input placeholder="Enter your Email address*" w="90%" size="md" bg="white" my="20px" />
+                        <Input placeholder="Enter your Email address*" color="black" w="90%" size="md" bg="white" my="20px" />
                         <RadioGroup>
                             <Stack direction="row" gap="20px" justifyContent="center">
                                 <Radio value="men">Men</Radio>
@@ -37,7 +37,7 @@ export default function Footer() {
 
             {/* Lower section */}
 
-            <Flex mt="10px" fontSize="lg" p="10px" justifyContent="space-between">
+            <Flex mt="10px" fontSize="lg" p="10px" justifyContent="space-around">
                 <Box>
                 <Accordion defaultIndex={[1]} allowMultiple w="200px">
                     <AccordionItem>
