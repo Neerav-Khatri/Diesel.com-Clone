@@ -3,6 +3,7 @@ import Footer from "../Components/Footer";
 import { Box, Button, Flex, Image, Stack, Grid, Text } from "@chakra-ui/react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Link } from "react-router-dom";
 
 export default function Homepage() {
     const imageUrl = [
@@ -10,6 +11,39 @@ export default function Homepage() {
         { "url": "https://diesel.gumlet.io/banner/1674121536EOSS%20Website%20Banners-01.gif?compress=true&q=70"},
         { "url": "https://diesel.gumlet.io/banner/1674122683Denims_1336x591.webp?compress=true&q=70"},
     ]
+
+    const OfferCard = [
+        {
+            "src": "https://diesel.gumlet.io/banner/1673432263FW22%20DROP1-2-3%20+%20HIGH%20SUMMER%20OPC_DROP%202_1DR%20POD_1_1_JPEG_300dpi_D2_64_DROP2%201DR%20POD_SL_010_sRGB.webp",
+            "item": "FLAT 40% OFF ON MENS ACCESSORIES",
+            "id": 1,
+          },
+          {
+            "src": "https://diesel.gumlet.io/banner/1673432421FW22%20DROP1-2-3%20+%20HIGH%20SUMMER%20OPC_DROP%201_%20THE%20SUPERLOGO%20BEACHWEAR_1_1_JPEG_300dpi_sRGB_211105_HS_DIESEL%20INTIMATE_04_0011_i.webp",
+            "item": "FLAT 40% OFF ON MENS INNERWEAR",
+            "id": 2,
+          },
+          {
+            "src": "https://diesel.gumlet.io/banner/1673431371LOUNGEWEAR%20DIESEL%20KID%20FW22___F3_03324_2206014-DSK_ski.webp?compress=true&q=70",
+            "item": "FLAT 40% OFF ON KIDS COLLECTION",
+            "id": 3
+          },
+          {
+            "src": "https://diesel.gumlet.io/banner/1673432566FW22%20DROP1-2-3%20+%20HIGH%20SUMMER%20OPC_DROP%203_NEW%20LIBRARY%20DENIM%20JACKETS_1_1_JPEG_300dpi_square_1080x1080.webp",
+            "item": "FLAT 40% OFF ON MENS APPAREL",
+            "id": 4
+          },
+          {
+            "src": "https://diesel.gumlet.io/banner/1673433126FW22%20DROP1-2-3%20+%20HIGH%20SUMMER%20OPC_DROP%203_SECURITY%20CHECK_1_1_JPEG_300dpi_1.webp",
+            "item": "FLAT 40% OFF ON WOMENS COLLECTION",
+            "id": 5
+          },
+          {
+            "src": "https://diesel.gumlet.io/banner/1673431588FW22%20DROP1-2-3%20+%20HIGH%20SUMMER%20OPC_DROP1_DIESEL%20RAW%20EDGES_1_1_JPEG_300dpi_sRGB_Shot_36_2753_RGB.webp",
+            "item": "FLAT 40% OFF ON MENS DENIM",
+            "id": 6
+          },
+    ];
 
     return (
         <div>
@@ -22,16 +56,27 @@ export default function Homepage() {
                     <Box key={Date.now()} pos="relative" display="flex" justifyContent="center" mb="30px"> 
                         <Image src={e.url} alt="Advertise" w="full" />
                         <Flex gap="20px" pos="absolute" bottom="20%">
-                            <Button bg="#ff0000" color="white" _hover={{border: "1px solid #ff0000", bg: "transparent", color: "#ff0000"}} px="30px">DISCOVER MAN</Button>
-                            <Button bg="#ff0000" color="white" _hover={{border: "1px solid #ff0000", bg: "transparent", color: "#ff0000"}} px="30px">DISCOVER WOMAN</Button> 
+                            <Link to="/products"><Button bg="#ff0000" color="white" _hover={{border: "1px solid #ff0000", bg: "transparent", color: "#ff0000"}} px="30px">DISCOVER MAN</Button></Link>
+                            <Link to="/products"><Button bg="#ff0000" color="white" _hover={{border: "1px solid #ff0000", bg: "transparent", color: "#ff0000"}} px="30px">DISCOVER WOMAN</Button></Link>
                         </Flex>
                     </Box>
                 )}
             </Carousel>
 
-            {/* Offer Carousel */}
+            {/* Offer Card */}
 
-            
+            <Grid templateColumns="repeat(6,15%)" my="40px" justifyContent="space-around">
+                {OfferCard.map((e) => 
+                <Flex key={e.id} direction="column" >
+                    <Box display="flex" justifyContent="center">
+                        <Image src={e.src} alt="image" w="200px" h="200px" />
+                    </Box>
+                    <Box p="10px">
+                        <Text fontSize="lg">{e.item}</Text>
+                    </Box>
+                </Flex>
+                )}
+            </Grid>
 
             {/* Category */}
 
@@ -100,8 +145,8 @@ export default function Homepage() {
             <Box pos="relative" display="flex" justifyContent="center" alignItems="center" mb="30px"> 
                 <Image src="https://diesel.gumlet.io/cms_images/1671005754Artboard%203@3x.webp" alt="Advertise" w="full" />
                 <Flex gap="20px" pos="absolute">
-                    <Button bg="#ffffff" color="black" _hover={{border: "1px solid #ffffff", bg: "transparent", color: "#ffffff"}} px="40px">SHOP MAN</Button>
-                    <Button bg="#ffffff" color="black" _hover={{border: "1px solid #ffffff", bg: "transparent", color: "#ffffff"}} px="40px">SHOP WOMAN</Button> 
+                    <Link to="/products"><Button bg="#ffffff" color="black" _hover={{border: "1px solid #ffffff", bg: "transparent", color: "#ffffff"}} px="40px">SHOP MAN</Button></Link>
+                    <Link to="/products"><Button bg="#ffffff" color="black" _hover={{border: "1px solid #ffffff", bg: "transparent", color: "#ffffff"}} px="40px">SHOP WOMAN</Button></Link> 
                 </Flex>
             </Box>
 
